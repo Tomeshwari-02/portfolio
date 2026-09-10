@@ -15,3 +15,5 @@ desktop.ini
 .vscode/
 .idea/
 scratch/
+
+.vercel

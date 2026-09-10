@@ -3337,6 +3337,41 @@
       color: #475569;
       line-height: 1.4;
       margin: 0;
+      flex: 1;
+    }
+
+    .twin-foot {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 1px;
+    }
+
+    .twin-info-btn {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: transparent;
+      color: #94a3b8;
+      border: 1px solid #e2e8f0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 700;
+      font-family: serif, 'Plus Jakarta Sans', sans-serif;
+      font-style: italic;
+      line-height: 1;
+      opacity: 0.65;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+
+    .twin-card:hover .twin-info-btn {
+      color: #64748b;
+      border-color: #cbd5e1;
+      background: #f8fafc;
+      opacity: 1;
     }
 
     /* Card 3: Watch Out / Context-Aware Smart Alert (2:00 PM Midday) */
@@ -3968,6 +4003,212 @@
     .btn-gold-pill.done {
       background: #10b981;
       box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+    }
+
+    /* ========================================================= */
+    /* NEW SIDE-BY-SIDE TWIN TILES: COMMUTE & BREAKFAST (9:00 AM) */
+    /* ========================================================= */
+    .morning-twin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .morning-compact-tile {
+      background: #ffffff;
+      border: 1px solid #edf2f7;
+      border-radius: 16px;
+      padding: 12px 13px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      min-height: 124px;
+    }
+
+    .morning-compact-tile:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-1.5px);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    }
+
+    .morning-compact-tile:active {
+      transform: scale(0.98);
+    }
+
+    .compact-tile-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .compact-icon-wrap {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .compact-icon-wrap.commute {
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
+    }
+
+    .compact-icon-wrap.food {
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+    }
+
+    .compact-badge {
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 999px;
+    }
+
+    .compact-badge.commute {
+      background: #f0f9ff;
+      color: #0369a1;
+      border: 1px solid #e0f2fe;
+    }
+
+    .compact-badge.food {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #d1fae5;
+    }
+
+    .compact-tile-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .compact-tile-label {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #94a3b8;
+      text-transform: uppercase;
+    }
+
+    .compact-tile-title {
+      font-size: 13px;
+      font-weight: 750;
+      color: #0f172a;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .compact-tile-stat {
+      font-size: 11px;
+      color: #475569;
+      margin-top: 1px;
+    }
+
+    .compact-price {
+      color: #0f172a;
+      font-weight: 800;
+    }
+
+    .compact-tile-sub {
+      font-size: 10px;
+      color: #64748b;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .compact-tile-foot {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding-top: 6px;
+      border-top: 1px solid #f1f5f9;
+      margin-top: 2px;
+    }
+
+    .compact-pill-tag {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 1.5px 5px;
+      border-radius: 4px;
+    }
+
+    .compact-pill-tag.commute {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .compact-pill-tag.food {
+      background: #ffe4e6;
+      color: #e11d48;
+    }
+
+    .compact-action-link {
+      font-size: 10.5px;
+      font-weight: 750;
+      color: #0f172a;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      transition: color 0.15s ease;
+    }
+
+    .compact-action-link:hover,
+    .morning-compact-tile:hover .compact-action-link {
+      color: #334155;
+      text-decoration: underline;
+    }
+
+    /* Shared Modal Badges for Commute & Breakfast */
+    .morning-badge-pill {
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 0.5px;
+      padding: 2.5px 8px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .morning-badge-pill.commute-pill {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .morning-badge-pill.food-pill {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    .morning-status-pill {
+      font-size: 10.5px;
+      font-weight: 650;
+      color: #64748b;
+      background: #f8fafc;
+      padding: 2px 7px;
+      border-radius: 6px;
+      border: 1px solid #f1f5f9;
+    }
+
+    .morning-status-pill.loc {
+      color: #059669;
+      background: #ecfdf5;
+      border-color: #d1fae5;
     }
 
     /* Card 3: Travel Goal */
@@ -5203,6 +5444,14 @@
       max-height: 82%;
       overflow-y: auto;
       box-sizing: border-box;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .onebanc-modal-sheet::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
     }
 
     .onebanc-modal-overlay.active .onebanc-modal-sheet {
@@ -6634,8 +6883,9 @@
                   alt="" /></span><span class="app-label">Settings</span></a>
             <a class="app" href="#" data-open-app="steam"><span class="icon"><img src="assets/app-icons/steam.png"
                   alt="" /></span><span class="app-label">Steam</span></a>
-            <a class="app" href="#" data-open-app="onebanc"><span class="icon"><img src="assets/app-icons/onebanc-ganesh-icon.png?v=2"
-                  alt="OneBanc" /></span><span class="app-label">OneBanc</span></a>
+            <a class="app" href="#" data-open-app="onebanc"><span class="icon"><img
+                  src="assets/app-icons/onebanc-ganesh-icon.png?v=2" alt="OneBanc" /></span><span
+                class="app-label">OneBanc</span></a>
             <a class="app" href="#" data-open-app="flighty"><span class="icon"><img src="assets/app-icons/flighty.png"
                   alt="" /></span><span class="app-label">Flighty</span></a>
           </nav>
@@ -7868,6 +8118,181 @@
             </div>
           </div>
 
+          <!-- MORNING COMMUTE & UBER BOOKING MODAL SHEET -->
+          <div class="onebanc-modal-overlay" id="onebancCommuteModal" role="dialog" aria-modal="true"
+            aria-label="Morning Commute & Uber Options">
+            <div class="onebanc-modal-sheet">
+              <div class="onebanc-modal-drag" id="commuteModalDrag"></div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="morning-badge-pill commute-pill">
+                  <span
+                    style="display:inline-flex; align-items:center; width:14px; height:14px; background:#000; border-radius:3px; padding:1px; margin-right:3px;">
+                    <svg viewBox="0 0 24 24" fill="#fff">
+                      <path
+                        d="M0 7.97v4.958c0 1.867 1.302 3.101 3 3.101.826 0 1.562-.316 2.094-.87v.736H6.27V7.97H5.082v4.888c0 1.257-.85 2.106-1.947 2.106-1.11 0-1.946-.827-1.946-2.106V7.971H0zm7.44 0v7.925h1.13v-.725c.521.532 1.257.86 2.06.86a3.006 3.006 0 0 0 3.034-3.01 3.01 3.01 0 0 0-3.033-3.024 2.86 2.86 0 0 0-2.049.861V7.971H7.439zm9.869 2.038c-1.687 0-2.965 1.37-2.965 3 0 1.72 1.334 3.01 3.066 3.01 1.053 0 1.913-.463 2.49-1.233l-.826-.611c-.43.577-.996.847-1.664.847-.973 0-1.753-.7-1.912-1.64h4.697v-.373c0-1.72-1.222-3-2.886-3zm6.295.068c-.634 0-1.098.294-1.381.758v-.713h-1.131v5.774h1.142V12.61c0-.894.544-1.47 1.291-1.47H24v-1.065h-.396zm-6.319.928c.85 0 1.564.588 1.756 1.47H15.52c.203-.882.916-1.47 1.765-1.47zm-6.732.012c1.086 0 1.98.883 1.98 2.004a1.993 1.993 0 0 1-1.98 2.001A1.989 1.989 0 0 1 8.56 13.02a1.99 1.99 0 0 1 1.992-2.004z" />
+                    </svg>
+                  </span>
+                  Uber Work Commute
+                </span>
+                <span class="morning-status-pill">8.4 km · 18 mins</span>
+              </div>
+              <h3 class="onebanc-modal-title">Workplace Commute Route</h3>
+              <p class="onebanc-modal-desc">Home (7th Block) ➔ Tech Park Tower B · Live Traffic: Moderate</p>
+
+              <!-- Route Card Visual -->
+              <div
+                style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin-bottom:12px;">
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                  <div
+                    style="font-size:11px; font-weight:700; color:#0f172a; display:flex; align-items:center; gap:6px;">
+                    <span
+                      style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#10b981;"></span>
+                    Home
+                    <span style="color:#94a3b8;">➔</span>
+                    <span
+                      style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#0284c7;"></span>
+                    Tech Park
+                  </div>
+                  <span
+                    style="font-size:10px; font-weight:700; color:#0369a1; background:#e0f2fe; padding:2px 6px; border-radius:4px;">Uber
+                    Smart Pick</span>
+                </div>
+                <div style="font-size:11px; color:#64748b; line-height:1.4;">
+                  💡 Commute allowance: <strong>₹120</strong>. Booking via OneBanc automatically gives you <strong>10%
+                    instant cashback</strong> + live UPI zero-fee payment.
+                </div>
+              </div>
+
+              <!-- Commute Selection Options -->
+              <div class="upi-contact-scroll" id="commuteModalOptions" style="margin-bottom:12px;">
+                <button class="upi-contact-pill active" id="modalCommuteOptAuto" data-fare="82" data-ride="Uber Auto"
+                  data-eta="3 mins" type="button">
+                  <span>🛺</span> Uber Auto · ₹82
+                </button>
+                <button class="upi-contact-pill" id="modalCommuteOptMoto" data-fare="45" data-ride="Uber Moto"
+                  data-eta="2 mins" type="button">
+                  <span>🏍️</span> Uber Moto · ₹45
+                </button>
+                <button class="upi-contact-pill" id="modalCommuteOptGo" data-fare="145" data-ride="Uber Go AC"
+                  data-eta="4 mins" type="button">
+                  <span>🚗</span> Uber Go · ₹145
+                </button>
+                <button class="upi-contact-pill" id="modalCommuteOptMetro" data-fare="30" data-ride="Metro Express"
+                  data-eta="6 mins" type="button">
+                  <span>🚇</span> Metro Feeder · ₹30
+                </button>
+              </div>
+
+              <div class="calc-breakdown-box" style="margin-bottom:14px;">
+                <div class="calc-row">
+                  <span id="commuteSelectedRideLabel">Selected: Uber Auto (Doorstep)</span>
+                  <strong id="commuteSelectedFare">₹82</strong>
+                </div>
+                <div class="calc-row">
+                  <span>OneBanc Card 10% Cashback</span>
+                  <span class="positive" id="commuteCashbackAmt">-₹8.20</span>
+                </div>
+                <div class="calc-row">
+                  <span>Safe-to-Spend impact</span>
+                  <span style="color:#0f172a; font-weight:700;">Within buffer (leaves ₹2,768)</span>
+                </div>
+                <div class="calc-divider"></div>
+                <div class="calc-row net-row">
+                  <span>Net Deducted:</span>
+                  <strong class="positive" id="commuteNetPayable">₹73.80</strong>
+                </div>
+              </div>
+
+              <button class="btn-modal-action" id="btnConfirmCommuteBooking" type="button">Confirm &amp; Book via
+                OneBanc UPI</button>
+              <button class="btn-modal-close" id="closeCommuteModalBtn" type="button"
+                style="margin-top:8px; background:#f1f5f9; color:#475569;">Cancel</button>
+            </div>
+          </div>
+
+          <!-- MORNING BREAKFAST & LOCAL FOOD EATERIES MODAL SHEET -->
+          <div class="onebanc-modal-overlay" id="onebancBreakfastModal" role="dialog" aria-modal="true"
+            aria-label="Morning Breakfast & Local Eateries">
+            <div class="onebanc-modal-sheet">
+              <div class="onebanc-modal-drag" id="breakfastModalDrag"></div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="morning-badge-pill food-pill" style="background:#ffe4e6; color:#e11d48;">
+                  <span
+                    style="display:inline-flex; align-items:center; width:14px; height:14px; background:#e23744; border-radius:3px; padding:1px; margin-right:3px;">
+                    <svg viewBox="0 0 24 24" fill="#fff">
+                      <path
+                        d="M19.615 9.45l-1.258.473-.167.71-.446.021-.115.978h.408l-.211 1.51c-.131.939.036 1.381.865 1.381.488 0 .91-.175 1.135-.297l.145-.9c-.167.083-.436.19-.618.19-.247 0-.276-.13-.225-.488l.189-1.396h.843c.03-.206.131-.877.16-1h-.865zm-3.779 1.002c-.115.002-.236.01-.361.026a3.592 3.592 0 0 0-1.347.432l.26.789c.269-.15.615-.28.978-.326.538-.066.757.1.79.375.014.109.004.199-.005.289l-.014.056a3.46 3.46 0 0 0-1.097-.036c-.518.063-.943.273-1.204.6a1.324 1.324 0 0 0-.225 1.034c.127.583.553.84 1.199.76.45-.055.812-.27 1.076-.63a2.665 2.665 0 0 1-.03.304 1.74 1.74 0 0 1-.072.29l1.244.001a3.657 3.657 0 0 1-.001-.365c.036-.459.118-1.143.247-2.051a2.397 2.397 0 0 0-.002-.59c-.08-.644-.628-.969-1.436-.958zm6.536.063c-1.194 0-2.107 1.067-2.107 2.342 0 .959.552 1.693 1.628 1.693 1.2 0 2.107-1.067 2.107-2.35 0-.95-.538-1.685-1.628-1.685zm-11.777.041c-.538 0-1.12.465-1.52 1.236.102-.504.08-1.076.051-1.198a8.964 8.964 0 0 1-1.287.122 6.9 6.9 0 0 1-.073 1.243l-.167 1.145c-.066.45-.138.969-.211 1.297h1.353c.007-.199.058-.511.094-.786l.116-.786c.095-.511.502-1.114.815-1.114.182 0 .175.176.124.504l-.131.885c-.066.45-.138.969-.211 1.297h1.367c.008-.199.051-.512.088-.786l.116-.786c.094-.512.502-1.114.814-1.114.182 0 .175.168.146.396l-.327 2.29H13l.438-2.609c.095-.649.044-1.236-.676-1.236-.523 0-1.09.443-1.49 1.182.087-.61.036-1.182-.677-1.182zm-4.88.008c-1.177 0-2.08 1.053-2.08 2.312 0 .946.546 1.67 1.608 1.67 1.185 0 2.08-1.052 2.08-2.319 0-.938-.531-1.663-1.607-1.663zm-5.126.091c-.05.39-.102.778-.175 1.13.328-.008.619-.016 1.411-.016l-1.81 1.96-.015.703c.444-.03.997-.039 1.63-.039.566 0 1.134.008 1.497.039.065-.458.13-.763.21-1.137-.275.015-.755.023-1.512.023l1.81-1.969.023-.694c-.437.023-.83.03-1.52.03-.749 0-.975-.007-1.549-.03zm4.988.927c.255 0 .408.228.408.701 0 .687-.276 1.251-.626 1.251-.261 0-.414-.236-.414-.702 0-.694.283-1.25.632-1.25zm16.629 0c.254 0 .407.228.407.701 0 .687-.276 1.251-.625 1.251-.262 0-.415-.236-.415-.702 0-.694.284-1.25.633-1.25zM15.51 12.64c.206-.003.403.024.55.058l-.013.118c-.075.44-.39.881-.848.938-.31.037-.578-.148-.608-.39a.538.538 0 0 1 .114-.41c.117-.159.336-.268.599-.3.069-.009.138-.013.206-.014Z" />
+                    </svg>
+                  </span>
+                  Zomato Breakfast
+                </span>
+                <span class="morning-status-pill loc">Within 500m</span>
+              </div>
+              <h3 class="onebanc-modal-title">Breakfast Near Your Locality</h3>
+              <p class="onebanc-modal-desc">Healthy, low-price recommendations matching your daily food budget on
+                Zomato.</p>
+
+              <!-- Breakfast Selection Options -->
+              <div class="upi-contact-scroll" id="breakfastModalOptions" style="margin-bottom:12px;">
+                <button class="upi-contact-pill active" id="modalFoodOptUdupi" data-price="65"
+                  data-dish="Udupi Idli-Vada + Coffee" data-spot="Udupi Sri Krishna" type="button">
+                  <span>🥞</span> Udupi Combo · ₹65
+                </button>
+                <button class="upi-contact-pill" id="modalFoodOptSharmaji" data-price="40"
+                  data-dish="Bun Maska + Adrak Chai" data-spot="Sharmaji Chai" type="button">
+                  <span>☕</span> Bun Maska + Chai · ₹40
+                </button>
+                <button class="upi-contact-pill" id="modalFoodOptHealthy" data-price="85"
+                  data-dish="Sprouts Poha + Fresh Juice" data-spot="Healthy Bites" type="button">
+                  <span>🥗</span> Protein Bowl · ₹85
+                </button>
+              </div>
+
+              <!-- Selected Item Details -->
+              <div
+                style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:12px; margin-bottom:12px;">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+                  <div>
+                    <div style="font-size:12.5px; font-weight:750; color:#0f172a;" id="breakfastDetailSpot">Udupi Sri
+                      Krishna Bhavan</div>
+                    <div style="font-size:11px; font-weight:600; color:#475569;" id="breakfastDetailDish">2 Idlis + Medu
+                      Vada + Filter Coffee</div>
+                  </div>
+                  <span
+                    style="font-size:10px; font-weight:700; color:#15803d; background:#dcfce7; padding:2px 6px; border-radius:4px;">★
+                    4.8 Pure Veg</span>
+                </div>
+                <div style="font-size:10.5px; color:#64748b;">
+                  📍 300m away · ⏱️ Ready in 5 mins · 🔥 340 kcal (11g protein)
+                </div>
+              </div>
+
+              <div class="calc-breakdown-box" style="margin-bottom:14px;">
+                <div class="calc-row">
+                  <span>Meal Combo Price</span>
+                  <strong id="breakfastSelectedPrice">₹65</strong>
+                </div>
+                <div class="calc-row">
+                  <span>OneBanc Local Merchant Discount</span>
+                  <span class="positive" id="breakfastDiscountAmt">-₹5.00</span>
+                </div>
+                <div class="calc-row">
+                  <span>Daily Meal Allowance Impact</span>
+                  <span style="color:#0f172a; font-weight:700;">2.3% of Safe-to-Spend</span>
+                </div>
+                <div class="calc-divider"></div>
+                <div class="calc-row net-row">
+                  <span>Net Payable:</span>
+                  <strong class="positive" id="breakfastNetPayable">₹60.00</strong>
+                </div>
+              </div>
+
+              <button class="btn-modal-action" id="btnConfirmBreakfastOrder" type="button">Pay &amp; Order with OneBanc UPI</button>
+              <button class="btn-modal-close" id="closeBreakfastModalBtn" type="button"
+                style="margin-top:8px; background:#f1f5f9; color:#475569;">Cancel</button>
+            </div>
+          </div>
+
           <!-- TOP APP HEADER -->
           <header class="onebanc-header">
             <div class="onebanc-header-left">
@@ -7977,28 +8402,56 @@
                   <button class="btn-gold-pill" id="btnBestMoveSave" type="button">Save ₹500</button>
                 </article>
 
-                <!-- CARD 3: TRAVEL GOAL -->
-                <article class="card-goal" id="cardGoal" title="Click to manage Travel Goal">
-                  <div class="goal-top-row">
-                    <div class="goal-title-group">
-                      <span class="goal-icon">✈</span>
-                      <span style="font-size:12.5px; font-weight:750; color:#0f172a;">Travel Goal</span>
+                <!-- MORNING TWIN TILES (SIDE BY SIDE: UBER COMMUTE & ZOMATO BREAKFAST) -->
+                <div class="morning-twin-grid">
+                  <!-- TILE 1: UBER COMMUTE (WORKPLACE & TRAVEL) -->
+                  <div class="morning-compact-tile" id="cardMorningCommute"
+                    title="Click to view Morning Commute &amp; Uber Options">
+                    <div class="compact-tile-head">
+                      <div class="brand-avatar brand-uber" style="width:28px; height:28px; border-radius:8px;">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M0 7.97v4.958c0 1.867 1.302 3.101 3 3.101.826 0 1.562-.316 2.094-.87v.736H6.27V7.97H5.082v4.888c0 1.257-.85 2.106-1.947 2.106-1.11 0-1.946-.827-1.946-2.106V7.971H0zm7.44 0v7.925h1.13v-.725c.521.532 1.257.86 2.06.86a3.006 3.006 0 0 0 3.034-3.01 3.01 3.01 0 0 0-3.033-3.024 2.86 2.86 0 0 0-2.049.861V7.971H7.439zm9.869 2.038c-1.687 0-2.965 1.37-2.965 3 0 1.72 1.334 3.01 3.066 3.01 1.053 0 1.913-.463 2.49-1.233l-.826-.611c-.43.577-.996.847-1.664.847-.973 0-1.753-.7-1.912-1.64h4.697v-.373c0-1.72-1.222-3-2.886-3zm6.295.068c-.634 0-1.098.294-1.381.758v-.713h-1.131v5.774h1.142V12.61c0-.894.544-1.47 1.291-1.47H24v-1.065h-.396zm-6.319.928c.85 0 1.564.588 1.756 1.47H15.52c.203-.882.916-1.47 1.765-1.47zm-6.732.012c1.086 0 1.98.883 1.98 2.004a1.993 1.993 0 0 1-1.98 2.001A1.989 1.989 0 0 1 8.56 13.02a1.99 1.99 0 0 1 1.992-2.004z" />
+                        </svg>
+                      </div>
+                      <span class="compact-badge commute">8.4 km</span>
                     </div>
-                    <div class="goal-amounts">
-                      <span id="goalCurrent">₹32,500</span> <span class="target">/ <span
-                          id="goalTarget">₹50,000</span></span>
+                    <div class="compact-tile-content">
+                      <div class="compact-tile-label">COMMUTE</div>
+                      <div class="compact-tile-title">Travel to Work</div>
+                      <div class="compact-tile-stat">Rides from <strong class="compact-price">₹45</strong></div>
+                      <div class="compact-tile-sub">18m · Tech Park</div>
+                    </div>
+                    <div class="compact-tile-foot">
+                      <span class="compact-action-link">Book ↗</span>
                     </div>
                   </div>
-                  <div class="progress-track">
-                    <div class="progress-fill" id="goalProgressFill" style="width: 65%;"></div>
-                  </div>
-                  <div class="goal-bottom-row">
-                    <span class="goal-status-text" id="goalStatusText">You're on track to reach your goal.</span>
-                    <span class="goal-percentage" id="goalPercentText">65%</span>
-                  </div>
-                </article>
 
-                <!-- CARD 4: 2 UPCOMING PAYMENTS -->
+                  <!-- TILE 2: ZOMATO BREAKFAST (FOOD & EATERIES) -->
+                  <div class="morning-compact-tile" id="cardMorningBreakfast"
+                    title="Click to view Local Breakfast Options">
+                    <div class="compact-tile-head">
+                      <div class="brand-avatar brand-zomato" style="width:28px; height:28px; border-radius:8px;">
+                        <svg viewBox="0 0 24 24">
+                          <path
+                            d="M19.615 9.45l-1.258.473-.167.71-.446.021-.115.978h.408l-.211 1.51c-.131.939.036 1.381.865 1.381.488 0 .91-.175 1.135-.297l.145-.9c-.167.083-.436.19-.618.19-.247 0-.276-.13-.225-.488l.189-1.396h.843c.03-.206.131-.877.16-1h-.865zm-3.779 1.002c-.115.002-.236.01-.361.026a3.592 3.592 0 0 0-1.347.432l.26.789c.269-.15.615-.28.978-.326.538-.066.757.1.79.375.014.109.004.199-.005.289l-.014.056a3.46 3.46 0 0 0-1.097-.036c-.518.063-.943.273-1.204.6a1.324 1.324 0 0 0-.225 1.034c.127.583.553.84 1.199.76.45-.055.812-.27 1.076-.63a2.665 2.665 0 0 1-.03.304 1.74 1.74 0 0 1-.072.29l1.244.001a3.657 3.657 0 0 1-.001-.365c.036-.459.118-1.143.247-2.051a2.397 2.397 0 0 0-.002-.59c-.08-.644-.628-.969-1.436-.958zm6.536.063c-1.194 0-2.107 1.067-2.107 2.342 0 .959.552 1.693 1.628 1.693 1.2 0 2.107-1.067 2.107-2.35 0-.95-.538-1.685-1.628-1.685zm-11.777.041c-.538 0-1.12.465-1.52 1.236.102-.504.08-1.076.051-1.198a8.964 8.964 0 0 1-1.287.122 6.9 6.9 0 0 1-.073 1.243l-.167 1.145c-.066.45-.138.969-.211 1.297h1.353c.007-.199.058-.511.094-.786l.116-.786c.095-.511.502-1.114.815-1.114.182 0 .175.176.124.504l-.131.885c-.066.45-.138.969-.211 1.297h1.367c.008-.199.051-.512.088-.786l.116-.786c.094-.512.502-1.114.814-1.114.182 0 .175.168.146.396l-.327 2.29H13l.438-2.609c.095-.649.044-1.236-.676-1.236-.523 0-1.09.443-1.49 1.182.087-.61.036-1.182-.677-1.182zm-4.88.008c-1.177 0-2.08 1.053-2.08 2.312 0 .946.546 1.67 1.608 1.67 1.185 0 2.08-1.052 2.08-2.319 0-.938-.531-1.663-1.607-1.663zm-5.126.091c-.05.39-.102.778-.175 1.13.328-.008.619-.016 1.411-.016l-1.81 1.96-.015.703c.444-.03.997-.039 1.63-.039.566 0 1.134.008 1.497.039.065-.458.13-.763.21-1.137-.275.015-.755.023-1.512.023l1.81-1.969.023-.694c-.437.023-.83.03-1.52.03-.749 0-.975-.007-1.549-.03zm4.988.927c.255 0 .408.228.408.701 0 .687-.276 1.251-.626 1.251-.261 0-.414-.236-.414-.702 0-.694.283-1.25.632-1.25zm16.629 0c.254 0 .407.228.407.701 0 .687-.276 1.251-.625 1.251-.262 0-.415-.236-.415-.702 0-.694.284-1.25.633-1.25zM15.51 12.64c.206-.003.403.024.55.058l-.013.118c-.075.44-.39.881-.848.938-.31.037-.578-.148-.608-.39a.538.538 0 0 1 .114-.41c.117-.159.336-.268.599-.3.069-.009.138-.013.206-.014Z" />
+                        </svg>
+                      </div>
+                      <span class="compact-badge food">&lt;500m</span>
+                    </div>
+                    <div class="compact-tile-content">
+                      <div class="compact-tile-label">BREAKFAST</div>
+                      <div class="compact-tile-title">Morning Fuel</div>
+                      <div class="compact-tile-stat">Combos from <strong class="compact-price">₹40</strong></div>
+                      <div class="compact-tile-sub">Udupi &amp; Cafes</div>
+                    </div>
+                    <div class="compact-tile-foot">
+                      <span class="compact-action-link">Menu ↗</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CARD 3: 2 UPCOMING PAYMENTS -->
                 <article class="card-payments" id="cardPayments">
                   <div class="payments-header">
                     <span class="payments-header-title" id="paymentsHeaderTitle">2 upcoming payments</span>
@@ -8037,7 +8490,7 @@
                   </div>
                 </article>
 
-                <!-- CARD 5: ONE THING WORTH KNOWING -->
+                <!-- CARD 4: ONE THING WORTH KNOWING -->
                 <article class="card-worth-knowing" id="cardWorthKnowing" title="Click to view Spending Insights">
                   <svg class="worth-knowing-watermark" viewBox="0 0 24 24" fill="currentColor">
                     <path
@@ -8049,7 +8502,7 @@
                   <button class="worth-knowing-link" id="btnWorthKnowingDetails" type="button">View details</button>
                 </article>
 
-                <!-- CARD 6: PULSE -->
+                <!-- CARD 5: PULSE -->
                 <article class="card-pulse" id="cardPulse">
                   <div class="pulse-title">Pulse</div>
                   <div class="pulse-row">
@@ -8069,7 +8522,7 @@
                   </div>
                 </article>
 
-                <!-- SECTION 7: RECENT ACTIVITY -->
+                <!-- SECTION 6: RECENT ACTIVITY -->
                 <section class="activity-section" id="sectionRecentActivity">
                   <div class="activity-head">
                     <span class="activity-head-title">Recent Activity</span>
@@ -8106,6 +8559,27 @@
                     </div>
                   </div>
                 </section>
+
+                <!-- CARD 7: TRAVEL GOAL (AT VERY BOTTOM OF 9:00 AM DASHBOARD) -->
+                <article class="card-goal" id="cardGoal" title="Click to manage Travel Goal">
+                  <div class="goal-top-row">
+                    <div class="goal-title-group">
+                      <span class="goal-icon">✈</span>
+                      <span style="font-size:12.5px; font-weight:750; color:#0f172a;">Travel Goal</span>
+                    </div>
+                    <div class="goal-amounts">
+                      <span id="goalCurrent">₹32,500</span> <span class="target">/ <span
+                          id="goalTarget">₹50,000</span></span>
+                    </div>
+                  </div>
+                  <div class="progress-track">
+                    <div class="progress-fill" id="goalProgressFill" style="width: 65%;"></div>
+                  </div>
+                  <div class="goal-bottom-row">
+                    <span class="goal-status-text" id="goalStatusText">You're on track to reach your goal.</span>
+                    <span class="goal-percentage" id="goalPercentText">65%</span>
+                  </div>
+                </article>
               </div>
 
               <!-- ========================================== -->
@@ -8138,6 +8612,9 @@
                       <span id="twinTitleLeft">Pace Check</span>
                     </div>
                     <p class="twin-body" id="twinBodyLeft">12% less than your usual Tuesday pace.</p>
+                    <div class="twin-foot">
+                      <span class="twin-info-btn" aria-hidden="true">i</span>
+                    </div>
                   </div>
                   <div class="twin-card" id="twinCardRight" title="Click to view Amazon ₹480 Transaction">
                     <div class="twin-header">
@@ -8145,6 +8622,9 @@
                       <span id="twinTitleRight">Insight</span>
                     </div>
                     <p class="twin-body" id="twinBodyRight">Your largest payment today was ₹480 at Amazon.</p>
+                    <div class="twin-foot">
+                      <span class="twin-info-btn" aria-hidden="true">i</span>
+                    </div>
                   </div>
                 </div>
 
@@ -8162,7 +8642,8 @@
                     </div>
                   </div>
                   <div class="alert-headline" id="alertHeadline">Shopping is already 41% of today's spending.</div>
-                  <p class="alert-body" id="alertBody">You've spent ₹480 at Amazon. At this rate, shopping will exceed your ₹600 category budget before 5 PM.</p>
+                  <p class="alert-body" id="alertBody">You've spent ₹480 at Amazon. At this rate, shopping will exceed
+                    your ₹600 category budget before 5 PM.</p>
                 </article>
 
                 <!-- CARD 4: WHERE YOUR MONEY WENT -->
@@ -8222,7 +8703,8 @@
                 </article>
 
                 <!-- CARD 6: REASON TO RETURN AT 5 PM (EVENING PREVIEW) -->
-                <article class="card-return-teaser" id="cardReturn5pmTeaser" title="Click to preview 5:00 PM Evening Wrap-Up">
+                <article class="card-return-teaser" id="cardReturn5pmTeaser"
+                  title="Click to preview 5:00 PM Evening Wrap-Up">
                   <div class="teaser-top-row">
                     <div class="teaser-heading-wrap">
                       <span class="teaser-moon-icon">🌙</span>
@@ -8645,7 +9127,8 @@
                   style="margin:0 auto 6px; width:32px; height:32px; font-size:14px; cursor:pointer; user-select:none; transition:transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.16s ease;"
                   title="Tap to inspect">1</div>
                 <div style="font-size:13px; font-weight:750; color:#1e293b;">OneBanc Intelligent Core</div>
-                <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">v3.4.2 · Build for Miss Nigar Hussain &amp;
+                <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">v3.4.2 · Build for Miss Nigar Hussain
+                  &amp;
                   Hiring Team OneBanc</div>
               </article>
             </div>
@@ -9698,6 +10181,25 @@
     const bestMoveText = document.getElementById("bestMoveText");
     const btnBestMoveSave = document.getElementById("btnBestMoveSave");
 
+    // Morning Commute & Breakfast Elements (9:00 AM)
+    const cardMorningCommute = document.getElementById("cardMorningCommute");
+    const btnBookUberMoto = document.getElementById("btnBookUberMoto");
+    const btnBookUberAuto = document.getElementById("btnBookUberAuto");
+    const btnBookUberGo = document.getElementById("btnBookUberGo");
+    const btnOpenCommuteModal = document.getElementById("btnOpenCommuteModal");
+    const onebancCommuteModal = document.getElementById("onebancCommuteModal");
+    const closeCommuteModalBtn = document.getElementById("closeCommuteModalBtn");
+    const btnConfirmCommuteBooking = document.getElementById("btnConfirmCommuteBooking");
+
+    const cardMorningBreakfast = document.getElementById("cardMorningBreakfast");
+    const btnOrderUdupi = document.getElementById("btnOrderUdupi");
+    const btnOrderSharmaji = document.getElementById("btnOrderSharmaji");
+    const btnOrderHealthy = document.getElementById("btnOrderHealthy");
+    const btnOpenBreakfastModal = document.getElementById("btnOpenBreakfastModal");
+    const onebancBreakfastModal = document.getElementById("onebancBreakfastModal");
+    const closeBreakfastModalBtn = document.getElementById("closeBreakfastModalBtn");
+    const btnConfirmBreakfastOrder = document.getElementById("btnConfirmBreakfastOrder");
+
     const cardGoal = document.getElementById("cardGoal");
     const goalCurrent = document.getElementById("goalCurrent");
     const goalTarget = document.getElementById("goalTarget");
@@ -9762,7 +10264,7 @@
         return;
       }
       cardMiddayAlert.style.display = "flex";
-      
+
       const item = (alertData.alternates && alertData.alternates[idx]) ? alertData.alternates[idx] : alertData;
       activeMiddayAlertIndex = idx;
 
@@ -10129,6 +10631,230 @@
         btnBestMoveSave.classList.add("done");
         syncOneBancUI();
         showOneBancToast("✨ Saved ₹500 to Travel Goal! Japan trip on track.");
+      });
+    }
+
+    // ==========================================
+    // MORNING COMMUTE (UBER & BUDGET TRAVEL) HANDLERS
+    // ==========================================
+    if (btnBookUberMoto) {
+      btnBookUberMoto.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (onebancState.balance < 45) {
+          showOneBancToast("Insufficient balance for Uber Moto");
+          return;
+        }
+        onebancState.balance -= 45;
+        btnBookUberMoto.textContent = "Booked ✓";
+        btnBookUberMoto.classList.add("booked");
+        syncOneBancUI();
+        showOneBancToast("🏍️ Uber Moto booked for ₹45! Arriving in 2 mins. ₹4.50 Cashback credited ✨");
+      });
+    }
+
+    if (btnBookUberAuto) {
+      btnBookUberAuto.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (onebancState.balance < 82) {
+          showOneBancToast("Insufficient balance for Uber Auto");
+          return;
+        }
+        onebancState.balance -= 82;
+        btnBookUberAuto.textContent = "Booked ✓";
+        btnBookUberAuto.classList.add("booked");
+        syncOneBancUI();
+        showOneBancToast("🛺 Uber Auto booked for ₹82! Driver arriving in 3 mins. ₹8.20 Cashback credited ✨");
+      });
+    }
+
+    if (btnBookUberGo) {
+      btnBookUberGo.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (onebancState.balance < 145) {
+          showOneBancToast("Insufficient balance for Uber Go");
+          return;
+        }
+        onebancState.balance -= 145;
+        btnBookUberGo.textContent = "Booked ✓";
+        btnBookUberGo.classList.add("booked");
+        syncOneBancUI();
+        showOneBancToast("🚗 Uber Go booked for ₹145! AC Cab arriving in 4 mins. ₹14.50 Cashback credited ✨");
+      });
+    }
+
+    if (btnOpenCommuteModal) {
+      btnOpenCommuteModal.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openModal(onebancCommuteModal);
+      });
+    }
+    if (cardMorningCommute) {
+      cardMorningCommute.addEventListener("click", () => openModal(onebancCommuteModal));
+    }
+    if (closeCommuteModalBtn && onebancCommuteModal) {
+      closeCommuteModalBtn.addEventListener("click", () => closeModal(onebancCommuteModal));
+    }
+    if (onebancCommuteModal) {
+      onebancCommuteModal.addEventListener("click", (e) => {
+        if (e.target === onebancCommuteModal || e.target.id === "commuteModalDrag") closeModal(onebancCommuteModal);
+      });
+    }
+
+    // Commute Modal Option Pills
+    let currentCommuteFare = 82;
+    let currentCommuteName = "Uber Auto";
+    const commutePills = document.querySelectorAll("#commuteModalOptions .upi-contact-pill");
+    commutePills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        commutePills.forEach((p) => p.classList.remove("active"));
+        pill.classList.add("active");
+        currentCommuteFare = parseInt(pill.getAttribute("data-fare"), 10) || 82;
+        currentCommuteName = pill.getAttribute("data-ride") || "Uber Auto";
+        const cashback = (currentCommuteFare * 0.1).toFixed(2);
+        const net = (currentCommuteFare - (currentCommuteFare * 0.1)).toFixed(2);
+
+        const lbl = document.getElementById("commuteSelectedRideLabel");
+        const fare = document.getElementById("commuteSelectedFare");
+        const cb = document.getElementById("commuteCashbackAmt");
+        const netEl = document.getElementById("commuteNetPayable");
+
+        if (lbl) lbl.textContent = `Selected: ${currentCommuteName}`;
+        if (fare) fare.textContent = `₹${currentCommuteFare}`;
+        if (cb) cb.textContent = `-₹${cashback}`;
+        if (netEl) netEl.textContent = `₹${net}`;
+      });
+    });
+
+    if (btnConfirmCommuteBooking) {
+      btnConfirmCommuteBooking.addEventListener("click", () => {
+        const netAmt = Math.round(currentCommuteFare * 0.9);
+        if (onebancState.balance < netAmt) {
+          showOneBancToast("Insufficient balance for ride booking");
+          return;
+        }
+        onebancState.balance -= netAmt;
+        closeModal(onebancCommuteModal);
+        syncOneBancUI();
+        if (btnBookUberAuto) {
+          btnBookUberAuto.textContent = "Booked ✓";
+          btnBookUberAuto.classList.add("booked");
+        }
+        showOneBancToast(`⚡ ${currentCommuteName} booked for ₹${netAmt} via OneBanc UPI! Live tracking enabled.`);
+      });
+    }
+
+    // ==========================================
+    // MORNING BREAKFAST (LOCAL EATERIES) HANDLERS
+    // ==========================================
+    if (btnOrderUdupi) {
+      btnOrderUdupi.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (onebancState.balance < 65) {
+          showOneBancToast("Insufficient balance for breakfast order");
+          return;
+        }
+        onebancState.balance -= 65;
+        btnOrderUdupi.textContent = "Ordered ✓";
+        btnOrderUdupi.classList.add("ordered");
+        syncOneBancUI();
+        showOneBancToast("🥞 Ordered Udupi Combo (Idli-Vada + Filter Coffee) for ₹65! Ready in 5m.");
+      });
+    }
+
+    if (btnOrderSharmaji) {
+      btnOrderSharmaji.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (onebancState.balance < 40) {
+          showOneBancToast("Insufficient balance for breakfast order");
+          return;
+        }
+        onebancState.balance -= 40;
+        btnOrderSharmaji.textContent = "Ordered ✓";
+        btnOrderSharmaji.classList.add("ordered");
+        syncOneBancUI();
+        showOneBancToast("☕ Ordered Bun Maska & Adrak Chai for ₹40! Freshly prepared in 2m.");
+      });
+    }
+
+    if (btnOrderHealthy) {
+      btnOrderHealthy.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (onebancState.balance < 85) {
+          showOneBancToast("Insufficient balance for breakfast order");
+          return;
+        }
+        onebancState.balance -= 85;
+        btnOrderHealthy.textContent = "Ordered ✓";
+        btnOrderHealthy.classList.add("ordered");
+        syncOneBancUI();
+        showOneBancToast("🥗 Ordered Sprouts Poha Bowl & Juice for ₹85! 11g protein power breakfast.");
+      });
+    }
+
+    if (btnOpenBreakfastModal) {
+      btnOpenBreakfastModal.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openModal(onebancBreakfastModal);
+      });
+    }
+    if (cardMorningBreakfast) {
+      cardMorningBreakfast.addEventListener("click", () => openModal(onebancBreakfastModal));
+    }
+    if (closeBreakfastModalBtn && onebancBreakfastModal) {
+      closeBreakfastModalBtn.addEventListener("click", () => closeModal(onebancBreakfastModal));
+    }
+    if (onebancBreakfastModal) {
+      onebancBreakfastModal.addEventListener("click", (e) => {
+        if (e.target === onebancBreakfastModal || e.target.id === "breakfastModalDrag") closeModal(onebancBreakfastModal);
+      });
+    }
+
+    // Breakfast Modal Food Selection Pills
+    let currentFoodPrice = 65;
+    let currentFoodSpot = "Udupi Sri Krishna Bhavan";
+    let currentFoodDish = "2 Idlis + Medu Vada + Filter Coffee";
+    const foodPills = document.querySelectorAll("#breakfastModalOptions .upi-contact-pill");
+    foodPills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        foodPills.forEach((p) => p.classList.remove("active"));
+        pill.classList.add("active");
+        currentFoodPrice = parseInt(pill.getAttribute("data-price"), 10) || 65;
+        currentFoodSpot = pill.getAttribute("data-spot") || "Udupi Sri Krishna Bhavan";
+        currentFoodDish = pill.getAttribute("data-dish") || "2 Idlis + Medu Vada + Filter Coffee";
+
+        const spotEl = document.getElementById("breakfastDetailSpot");
+        const dishEl = document.getElementById("breakfastDetailDish");
+        const priceEl = document.getElementById("breakfastSelectedPrice");
+        const discEl = document.getElementById("breakfastDiscountAmt");
+        const netEl = document.getElementById("breakfastNetPayable");
+
+        const discount = currentFoodPrice >= 60 ? 5 : 2;
+        const net = currentFoodPrice - discount;
+
+        if (spotEl) spotEl.textContent = currentFoodSpot;
+        if (dishEl) dishEl.textContent = currentFoodDish;
+        if (priceEl) priceEl.textContent = `₹${currentFoodPrice}`;
+        if (discEl) discEl.textContent = `-₹${discount}.00`;
+        if (netEl) netEl.textContent = `₹${net}.00`;
+      });
+    });
+
+    if (btnConfirmBreakfastOrder) {
+      btnConfirmBreakfastOrder.addEventListener("click", () => {
+        const discount = currentFoodPrice >= 60 ? 5 : 2;
+        const netAmt = currentFoodPrice - discount;
+        if (onebancState.balance < netAmt) {
+          showOneBancToast("Insufficient balance for food order");
+          return;
+        }
+        onebancState.balance -= netAmt;
+        closeModal(onebancBreakfastModal);
+        syncOneBancUI();
+        if (btnOrderUdupi) {
+          btnOrderUdupi.textContent = "Ordered ✓";
+          btnOrderUdupi.classList.add("ordered");
+        }
+        showOneBancToast(`🥞 ${currentFoodDish} ordered for ₹${netAmt} via OneBanc UPI! Ready in 5 mins.`);
       });
     }
 
